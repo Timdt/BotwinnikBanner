@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="ad.size" content="width=300,height=600">
+    <title>htmlanimatie</title>
+    <Style>
+
+    body{
+      margin:0px 0px 0px 0px;
+      padding:0px 0px 0px 0px;
+    }
+
+    #animation {
+    width:300px;
+    height: 600px;
+    background-image: url(images/hoekjes.png);
+    overflow:hidden;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    }
+
+    .rapid{
+      top:130px;
+      left:68px;
+      position: absolute;
+    }
+
+    .zaterdag{
+      top:260px;
+      left:80px;
+      position: absolute;
+    }
+
+    .sept{
+      top:290px;
+      left:20px;
+      position: absolute;
+    }
+
+    .zoetermeer{
+      top:320px;
+      left:50px;
+      position: absolute;
+    }
+
+    .speel {
+      top:355px;
+      left:25px;
+      position: absolute;
+    }
+
+    .zaal {
+      top:355px;
+      left:175px;
+      position: absolute;
+    }
+
+    .button{
+      top:460px;
+      left:65px;
+      position: absolute;
+    }
+
+    .win{
+      top:440px;
+      left:35px;
+      position: absolute;
+    }
+</style>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="author" content="treeonline.nl">
+<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.1_92cf05aba6ca4ea5cbc62b5a7cb924e3_min.js"></script>
+
+
+  </head>
+  <body>
+
+<div id="animation">
+
+<img class="rapid" src="images/rapid.png" />
+<img class="zaterdag" src="images/Zaterdag.png" />
+<img class="sept" src="images/sept.png" />
+<img class="zoetermeer" src="images/Zoetermeer.png" />
+<img class="speel" src="images/speel.png" />
+<img class="zaal" src="images/zaal.png" />
+<img class="win" src="images/win.png" />
+<img class="button" src="images/button.jpg" />
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+    var tl = new TimelineLite();
+
+    var rapid = document.getElementsByClassName(".rapid"),  // dit is zonder jquery, puur met javascript dus.
+        zaterdag = document.getElementsByClassName(".zaterdag"),
+        sept = document.getElementsByClassName(".sept"),
+        zoetermeer = document.getElementsByClassName(".zoetermeer"),
+        speel = document.getElementsByClassName(".speel"),
+        zaal = document.getElementsByClassName(".zaal"),
+        win = document.getElementsByClassName(".win"),
+        button = document.getElementsByClassName(".button");
+
+
+
+
+//content staat op pauze
+tl.from(".rapid", 0.3, {autoAlpha: 0, ease:Power1.easeOut,scaleX:3,scaleY:3,rotation:360})
+  .from(".zaterdag", 0.3, {x: -100, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+  .from(".sept", 0.3, {x: 100, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+  .from(".zoetermeer", 0.3, {x: -100, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+  .from(".speel", 0.3, {y: -15, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+  .from(".zaal", 0.6, {y: -15, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+  .from(".win", 0.2, {scaleX:7,scaleY:7, autoAlpha: 0, ease:Power1.easeOut,onComplete:shake},"-=0.15");
+
+  function shake(){
+    var shakebutton= new TimelineMax();
+        shakebutton.from(".button",0.3,{x:-10,ease:Bounce.easeOut,repeat:3,repeatDelay:3,onComplete:stoppen});
+
+  }
+
+  function stoppen(){
+    tl.restart();
+    console.log("timeline restarted");
+  }
+
+</script>
+
+  </body>
+</html>

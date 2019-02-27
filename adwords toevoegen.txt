@@ -1,0 +1,37 @@
+<!--In de head tag voeg je het volgende toe:-->
+
+<meta name="ad.size" content="width=300,height=600">   <!--in de meta aangeven de afmetingen van het formaat-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="treeonline.nl">
+
+<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.1_92cf05aba6ca4ea5cbc62b5a7cb924e3_min.js"></script> 
+<!--bovenstaande is de link van greensock voor te gebruiken in adwords.-->
+
+<!--
+CSS kan je intern plaatsen door binnen de <head> een <style></style>
+te plaatsen en hierin je css attributen te kopieren.
+-->
+
+<!--om je javascript te kopieren plaats je een <script></script> tag en hiertussen plaats je de javascript.-->
+
+<!--zip mag niet groter zijn dan 150kb.
+Zorg er dus voor dat afbeeldingen die je importeerd niet van de hoogste en grooste kwaliteit zijn. 
+Ook handig om ervoor te zorgen dat er geen marings en padding om de border heenzit. anders komt die maar half in adwords.-->
+
+//Het converteren van jquery naar javascript is niet zo moeilijk.
+//Zo maak je een var aan:   var rapid = document.getElementsByClassName(".rapid"),  // dit is zonder jquery, puur met javascript dus.
+//let op: ByClassName gebruik je alleen voor classed. GetElementByID gebruik je voor #rapid en dien je dus ook te verandern in je var.
+//  var tl = new TimelineLite(); een tl aanmaken is gewoon hetzelfde.
+
+//tl.from(".rapid", 0.3, {autoAlpha: 0, ease:Power1.easeOut,scaleX:3,scaleY:3,rotation:360})
+//  .from(".zaterdag", 0.3, {x: -100, autoAlpha: 0, ease:Power1.easeOut},"-=0.15")
+
+//let op de ".rapid" aanhalingstekens en de punt of #. dit hoeft niet met jquery wel met javascript.
+
+functie maken
+ // function shake(){
+ //  var shakebutton= new TimelineMax();
+ //      shakebutton.from(".button",0.3,{x:-10,ease:Bounce.easeOut,repeat:3,repeatDelay:3,onComplete:stoppen});
+ //}
+
+
